@@ -1,0 +1,13 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "editor.wordWrap": "on",
+  "eslint.validate": [
+    "vue",
+    "javascript",
+    "typescript"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+  }
+}

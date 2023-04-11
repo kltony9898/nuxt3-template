@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint:script": "eslint --ext .ts,.js,.vue ."
+  },
+  "devDependencies": {
+    "@nuxtjs/device": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.3.0",
+    "nuxt": "^3.1.1"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@pinia/nuxt": "^0.4.6",
+    "eslint": "^8.33.0",
+    "eslint-plugin-vue": "^9.9.0",
+    "husky": "^8.0.3",
+    "nuxt-svgo": "^1.1.0"
+  }
+}
