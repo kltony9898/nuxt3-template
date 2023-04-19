@@ -1,21 +1,28 @@
 {
+  "name": "nuxt3-template",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "nuxt build",
+    "build:gh-pages": "nuxt build --dotenv .env.gh-pages",
     "dev": "nuxt dev",
+    "dev:gh-pages": "nuxt dev --dotenv .env.gh-pages",
     "generate": "nuxt generate",
+    "generate:gh-pages": "nuxt generate --dotenv .env.gh-pages",
     "preview": "nuxt preview",
+    "preview:gh-pages": "nuxt preview --dotenv .env.gh-pages",
     "postinstall": "nuxt prepare",
+    "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"yarn lint:script\" && husky set .husky/pre-push \"yarn lint:script\"",
     "lint:script": "eslint --ext .ts,.js,.vue ."
   },
   "devDependencies": {
-    "@nuxtjs/device": "^3.0.0",
     "@nuxtjs/tailwindcss": "^6.3.0",
     "nuxt": "^3.1.1"
   },
   "dependencies": {
-    "@commitlint/cli": "^17.4.2",
-    "@commitlint/config-conventional": "^17.4.2",
+    "@commitlint/cli": "^17.6.0",
+    "@commitlint/config-conventional": "^17.6.0",
+    "@nuxt/devtools": "^0.4.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@pinia/nuxt": "^0.4.6",
     "eslint": "^8.33.0",

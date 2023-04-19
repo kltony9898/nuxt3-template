@@ -2,13 +2,13 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/device',
     ['@pinia/nuxt', {
       autoImports: [
         'defineStore',
         ['defineStore', 'definePiniaStore']
       ]
     }],
-    'nuxt-svgo'
+    'nuxt-svgo',
+    '@nuxt/devtools'
   ]
 })
