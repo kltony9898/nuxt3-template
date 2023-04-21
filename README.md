@@ -86,38 +86,48 @@ yarn lint:script // 檢查 eslint 規則
 ### 版控流程
 - 預設使用 `GitHub Flow` 流程
 - 視情況增加 `release/${主版號}.${次版號}` 分支維護單一版本
-  - 不合併回 `master` 分支
+  - 不合併回 master 分支
 
 ### Issues
-- 填寫需求或錯誤說明
-- 填寫標籤
-- 指派負責人
-- 列出檢查清單
-- 建立分支 
+- 填寫標題、說明和標籤類型
+- 指派至少一名負責人
+- 建立分支
+  - 右下角點擊 `Create a branch`
   - Master 分支改動 : `feature/#${issue_number}-${description}`
   - 特定 Release 分支改動 : `feature/${主版號}.${次版號}-#${issue_number}-${description}`
 
 ### Commits
 - 只開發對應 Issue 的內容，不相關的內容請另開 Issue
 - 複雜邏輯應適當註解
-- 定期使用 `git merge master --no-ff` 同步主分支
-- 提交通過 `commitlint` 檢查
+- 定期同步主分支
+  - Master 分支為主分支 : `git merge master --no-ff` 
+  - 特定 Release 分支為主分支 : `git merge release/${主版號}.${次版號} --no-ff` 
+- 通過 `commitlint` 檢查
 
 ### Pull Requests
-- 填寫功能說明
-- 指派工程師 Code Review，並通過至少一位工程師的檢查
-  - 是否符合對應 Issue 的功能
-  - 是否符合開發規範
-  - 目標合併分支是否正確
-- 通過 CI/CD 檢查
-- 使用 `Squash and Merge` 模式合併 Pull Request
+- Author
+  - 標題、功能說明和標籤類型填寫正確且清楚
+  - 通過 CI 檢查
+  - 填寫測試清單
+  - 指派至少一名 Code Review 負責人
+- Reviewer
+  - 確認標題、功能說明和標籤類型填寫符合對應 Issue
+  - 確認目標合併分支正確
+  - 進行 Code Review 確認是否符合開發規範
+  - 確認通過測試清單
+  - 使用 `Squash and Merge` 模式合併
+  - 確認通過 CI/CD 且成功合併及部署
 
 ### Releases
-- 版本號 : `v${主版號}.${次版號}.${修訂號}`
-  - 主版號 : 不可相容的功能新增或修改
-  - 次版號 : 可相容的功能新增或修改
-  - 修訂號 : 可相容的功能問題修復
-- 只能在 `master` 分支或 `release` 分支發布新版本
+- Choose a tag
+  - 版本號 : `v${主版號}.${次版號}.${修訂號}`
+    - 主版號 : 不可相容的功能新增或修改
+    - 次版號 : 可相容的功能新增或修改
+    - 修訂號 : 可相容的功能問題修復
+- Target
+  - 選擇 `master` 或 `release`
+- 填寫標題及改動說明
+  - 可點擊 `Generate release notes` 自動產生
 
 ### 特殊情境
-- Hotfix : 情境一樣將 `feature` 分支 合併回 `master` 分支，再用 `git cherry-pick` 的方式從 `master` 分支拿到 commit
+- Hotfix : 先將 feature 分支合併回 master 分支，再用 `git cherry-pick` 從 master 分支拿到 commit
