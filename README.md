@@ -1,29 +1,47 @@
 # Nuxt 3 模板
 
-## 專案描述
+## 專案資訊
 
-專案敘述
+### 描述
 
-## 專案指令
+這是一個使用 Nuxt3 + Typescript + Tailwind 開發的專案模板
+
+### 資料
+
+- 設計稿
+- 架構/流程圖
+- API 文件
+
+## 專案啟動
+
+### 環境需求
+
+- node 版本 : `16.18.1`
+- 編輯器 : `VSCode`
+
+### 專案指令
 
 ```
 yarn install // 安裝套件
 yarn dev // 啟動專案
 yarn dev:gh-pages // 啟動專案（GitHub Pages 模式）
-yarn build // 打包 CSR 專案
-yarn build:gh-pages // 打包 CSR 專案（GitHub Pages 模式）
-yarn generate // 打包 SSG 專案
-yarn generate:gh-pages // 打包 SSG 專案（GitHub Pages 模式）
+yarn build // 使用 CSR 或 SSR 模式打包專案
+yarn build:gh-pages // 使用 CSR 或 SSR 模式打包專案（GitHub Pages 模式）
+yarn generate // 使用 SSG 模式打包專案
+yarn generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
 yarn preview // 啟動打包後專案
 yarn preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）
 yarn lint:script // 檢查 eslint 規則
 ```
 
-## 專案資料
+### VSCode 套件
 
-- 設計稿
-- 架構/流程圖
-- API 文件
+- [VS Code](https://code.visualstudio.com/)
+- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Goto definition alias](https://marketplace.visualstudio.com/items?itemName=antfu.goto-alias)
 
 ## 專案建立
 
@@ -61,15 +79,6 @@ yarn lint:script // 檢查 eslint 規則
 - TypeScript
 - Tailwind CSS + Tailwind UI
 - Vite
-
-### VSCode 套件
-
-- [VS Code](https://code.visualstudio.com/)
-- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-- [Goto definition alias](https://marketplace.visualstudio.com/items?itemName=antfu.goto-alias)
 
 ### 開發套件
 - [pinia](https://pinia.vuejs.org/)
