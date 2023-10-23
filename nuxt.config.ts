@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/tailwindcss',
+    '@unocss/nuxt',
     ['@pinia/nuxt', {
       autoImports: [
         'defineStore',
@@ -10,5 +10,8 @@ export default defineNuxtConfig({
     }],
     'nuxt-svgo',
     '@nuxt/devtools'
+  ],
+  css: [
+    '@unocss/reset/tailwind.css'
   ]
 })
