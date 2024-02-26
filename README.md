@@ -16,7 +16,7 @@
 
 ### 環境需求
 
-- node 版本 : `16.18.1`
+- node 版本 : `18.18.0`
 - 編輯器 : `VSCode`
 
 ### 專案指令
@@ -39,7 +39,7 @@ yarn lint:script // 檢查 eslint 規則
 - [VS Code](https://code.visualstudio.com/)
 - [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 - [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [Windi CSS IntelliSense](https://windicss.org/editors/vscode.html)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Goto definition alias](https://marketplace.visualstudio.com/items?itemName=antfu.goto-alias)
 
@@ -77,12 +77,11 @@ yarn lint:script // 檢查 eslint 規則
 
 - Nuxt 3 + Composition API + `<script setup>`
 - TypeScript
-- Tailwind CSS + Tailwind UI
-- Vite
+- Windi CSS + Unocss
+- Nuxt CLI
 
 ### 開發套件
 - [pinia](https://pinia.vuejs.org/)
-- [vue-axios](https://github.com/imcvampire/vue-axios)
 
 ### 開發規範
 - [ESLint Standard](https://standardjs.com/readme-zhtw.html)

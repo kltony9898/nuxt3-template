@@ -1,16 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: false,
+  devtools: true,
   modules: [
-    '@unocss/nuxt',
     ['@pinia/nuxt', {
       autoImports: [
         'defineStore',
         ['defineStore', 'definePiniaStore']
       ]
     }],
-    'nuxt-svgo',
-    '@nuxt/devtools'
+    '@unocss/nuxt',
+    'nuxt-icons',
+    '@nuxt/devtools',
+    '@vueuse/nuxt'
   ],
+  imports: {
+    dirs: ['stores']
+  },
   css: [
     '@unocss/reset/tailwind.css'
   ]
