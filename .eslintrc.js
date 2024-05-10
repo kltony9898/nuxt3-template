@@ -1,33 +1,37 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true
   },
-  parser: 'vue-eslint-parser',
   extends: [
-    'standard',
     '@nuxtjs/eslint-config-typescript',
-    'plugin:vue/vue3-recommended'],
+    'plugin:nuxt/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-recommended'
+  ],
+  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    parser: '@typescript-eslint/parser',
-    sourceType: 'module'
+    sourceType: 'module',
+    parser: '@typescript-eslint/parser'
   },
-  plugins: [],
-  rules: {},
-  overrides: [
-    {
-      files: [
-        '**/pages/**/*.{js,ts,vue}',
-        '**/layouts/**/*.{js,ts,vue}',
-        '**/app.{js,ts,vue}',
-        '**/error.{js,ts,vue}'
-      ],
-      rules: {
-        indent: 'off',
-        '@typescript-eslint/indent': ['error', 2],
-        'vue/multi-word-component-names': 'off'
+  plugins: ['@typescript-eslint'],
+  rules: {
+    indent: 'off',
+    'no-console': 'off',
+    'vue/multi-word-component-names': 'off',
+    'vue/max-attributes-per-line': ['warn', {
+      singleline: {
+        max: 1
+      },
+      multiline: {
+        max: 1
       }
-    }
-  ]
+    }],
+    'vue/first-attribute-linebreak': ['warn', {
+      singleline: 'beside',
+      multiline: 'below'
+    }]
+  }
 }
