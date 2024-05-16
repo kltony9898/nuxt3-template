@@ -37,8 +37,8 @@ yarn lint:script // 檢查 eslint 規則
 ### VSCode 套件
 
 - [VS Code](https://code.visualstudio.com/)
-- [Vue Language Features (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
+- [Vue 3 Snippets](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets)
+- [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 - [Windi CSS IntelliSense](https://windicss.org/editors/vscode.html)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Goto definition alias](https://marketplace.visualstudio.com/items?itemName=antfu.goto-alias)
@@ -82,11 +82,13 @@ yarn lint:script // 檢查 eslint 規則
 
 ### 開發套件
 - [pinia](https://pinia.vuejs.org/)
+= [VueUse](https://www.vueusejs.com/)
 
 ### 開發規範
 - [ESLint Standard](https://standardjs.com/readme-zhtw.html)
+- [ESLint Vue3](https://eslint.vuejs.org/rules/)
+- [ESLint Nuxt3](https://github.com/nuxt/eslint-plugin-nuxt)
 - [commitlint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
-- [Vue 風格指南](https://v2.cn.vuejs.org/v2/style-guide/)
 - [Nuxt 3 架構參考](https://www.nuxtjs.org.cn/directory-structure/nuxt.html)
 
 ## 開發流程
