@@ -19,7 +19,6 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'tailwindcss'],
   rules: {
-    indent: 'off',
     'no-console': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/max-attributes-per-line': ['warn', {
@@ -34,7 +33,6 @@ module.exports = {
       singleline: 'beside',
       multiline: 'below'
     }],
-    'tailwindcss/no-contradicting-classname': 'off',
     'tailwindcss/no-custom-classname': 'off'
   }
 }
