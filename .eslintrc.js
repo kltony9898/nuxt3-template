@@ -6,6 +6,7 @@ module.exports = {
   },
   extends: [
     '@nuxtjs/eslint-config-typescript',
+    'plugin:tailwindcss/recommended',
     'plugin:nuxt/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended'
@@ -16,7 +17,7 @@ module.exports = {
     sourceType: 'module',
     parser: '@typescript-eslint/parser'
   },
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'tailwindcss'],
   rules: {
     indent: 'off',
     'no-console': 'off',
@@ -32,6 +33,8 @@ module.exports = {
     'vue/first-attribute-linebreak': ['warn', {
       singleline: 'beside',
       multiline: 'below'
-    }]
+    }],
+    'tailwindcss/no-contradicting-classname': 'off',
+    'tailwindcss/no-custom-classname': 'off'
   }
 }

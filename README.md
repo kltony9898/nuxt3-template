@@ -37,9 +37,9 @@ yarn lint:script // 檢查 eslint 規則
 ### VSCode 套件
 
 - [VS Code](https://code.visualstudio.com/)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
 - [Vue 3 Snippets](https://marketplace.visualstudio.com/items?itemName=hollowtree.vue-snippets)
 - [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
-- [Windi CSS IntelliSense](https://windicss.org/editors/vscode.html)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Goto definition alias](https://marketplace.visualstudio.com/items?itemName=antfu.goto-alias)
 
@@ -77,7 +77,7 @@ yarn lint:script // 檢查 eslint 規則
 
 - Nuxt 3 + Composition API + `<script setup>`
 - TypeScript
-- Windi CSS + Unocss
+- Tailwind CSS
 - Nuxt CLI
 
 ### 開發套件
@@ -86,6 +86,7 @@ yarn lint:script // 檢查 eslint 規則
 
 ### 開發規範
 - [ESLint Standard](https://standardjs.com/readme-zhtw.html)
+- [ESLint Tailwind](https://github.com/francoismassart/eslint-plugin-tailwindcss)
 - [ESLint Vue3](https://eslint.vuejs.org/rules/)
 - [ESLint Nuxt3](https://github.com/nuxt/eslint-plugin-nuxt)
 - [commitlint](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)

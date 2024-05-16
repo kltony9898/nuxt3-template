@@ -1,7 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: false,
-  devtools: true,
+  devtools: {
+    enable: true
+  },
   modules: [
     ['@pinia/nuxt', {
       autoImports: [
@@ -9,7 +11,7 @@ export default defineNuxtConfig({
         ['defineStore', 'definePiniaStore']
       ]
     }],
-    '@unocss/nuxt',
+    '@nuxtjs/tailwindcss',
     'nuxt-icons',
     '@nuxt/devtools',
     '@vueuse/nuxt'
@@ -17,9 +19,6 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores']
   },
-  css: [
-    '@unocss/reset/tailwind.css'
-  ],
   vite: {
     esbuild: {
         drop: ['console']
