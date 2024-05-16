@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
   vite: {
     esbuild: {
-        drop: ['console']
+      drop: ['console']
     }
   }
 })
