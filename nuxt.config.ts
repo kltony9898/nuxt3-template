@@ -19,6 +19,10 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['stores']
   },
+  app: {
+    baseURL: process.env.NUXT_API_BASE_URL,
+    buildAssetsDir: '/static/'
+  },
   vite: {
     esbuild: {
       drop: ['debugger'],
