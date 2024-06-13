@@ -21,7 +21,8 @@ export default defineNuxtConfig({
   },
   vite: {
     esbuild: {
-      drop: ['console']
+      drop: ['debugger'],
+      pure: ['console.log', 'console.error', 'console.warn', 'console.debug', 'console.trace']
     }
   }
 })
