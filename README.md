@@ -31,7 +31,7 @@ yarn generate // 使用 SSG 模式打包專案
 yarn generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
 yarn preview // 啟動打包後專案
 yarn preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）
-yarn lint:script // 檢查 eslint 規則
+yarn eslint // 檢查 eslint 規則
 ```
 
 ### VSCode 套件

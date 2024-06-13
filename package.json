@@ -12,8 +12,8 @@
     "preview": "nuxt preview",
     "preview:gh-pages": "nuxt preview --dotenv .env.gh-pages",
     "postinstall": "nuxt prepare",
-    "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"yarn lint:script\" && husky set .husky/pre-push \"yarn lint:script\"",
-    "lint:script": "eslint --ext .ts,.js,.vue ."
+    "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"yarn eslint\" && husky set .husky/pre-push \"yarn eslint\"",
+    "eslint": "eslint --ext .ts,.js,.vue ."
   },
   "devDependencies": {
     "@commitlint/cli": "18.2.0",
@@ -34,6 +34,7 @@
     "husky": "8.0.3",
     "nuxt": "3.8.0",
     "nuxt-icons": "3.2.1",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vue-tsc": "^1"
   }
 }

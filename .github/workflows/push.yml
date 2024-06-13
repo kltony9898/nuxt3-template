@@ -37,7 +37,7 @@ jobs:
       
     - name: Test
       run: |
-        yarn lint:script
+        yarn eslint
     
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4

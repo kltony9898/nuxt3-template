@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   devtools: {
     enable: true
   },
+  typescript: {
+    typeCheck: true
+  },
   modules: [
     ['@pinia/nuxt', {
       autoImports: [

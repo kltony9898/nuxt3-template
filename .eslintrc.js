@@ -1,21 +1,20 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
-    node: true
+    es2021: true
   },
+  parser: 'vue-eslint-parser',
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'plugin:tailwindcss/recommended',
     'plugin:nuxt/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-recommended'
+    'plugin:vue/vue3-recommended',
+    'plugin:tailwindcss/recommended'
   ],
-  parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module'
   },
   plugins: ['@typescript-eslint', 'tailwindcss'],
   rules: {

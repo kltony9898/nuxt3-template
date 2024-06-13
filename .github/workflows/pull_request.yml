@@ -37,6 +37,5 @@ jobs:
       
     - name: Test
       run: |
-        yarn lint:script
-
+        yarn eslint
     
