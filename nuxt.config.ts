@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import svgLoader from 'vite-svg-loader'
+
 export default defineNuxtConfig({
   ssr: false,
   devtools: {
@@ -25,6 +27,9 @@ export default defineNuxtConfig({
     buildAssetsDir: '/static/'
   },
   vite: {
+    plugins: [
+      svgLoader()
+    ],
     esbuild: {
       drop: ['debugger'],
       pure: ['console.log', 'console.error', 'console.warn', 'console.debug', 'console.trace']
