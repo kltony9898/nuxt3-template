@@ -16,23 +16,13 @@ watch(() => props.name, () => {
 
 const svg = ref()
 
-onMounted(() => {
-  watch(() => svg.value, () => {
-    if (!svg.value) {
-      return
-    }
-    const width = svg.value.$el.width.baseVal.value || 0
-    const height = svg.value.$el.height.baseVal.value || 0
-    svg.value.$el.setAttribute('viewBox', `0 0 ${width} ${height}`)
-  }, {
-    immediate: true
-  })
-})
-
 </script>
 <template>
-  <component
-    :is="iconComponent"
-    ref="svg"
-  />
+  <div class="relative">
+    <component
+      :is="iconComponent"
+      ref="svg"
+      class="size-full"
+    />
+  </div>
 </template>
