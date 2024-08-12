@@ -2,16 +2,18 @@
 import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      baseApiUrl: process.env.NUXT_APP_BASE_API_URL
+    }
+  },
   ssr: false,
-
   devtools: {
     enabled: true
   },
-
   typescript: {
     typeCheck: true
   },
-
   modules: [
     ['@pinia/nuxt', {
       autoImports: [
@@ -22,16 +24,13 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt'
   ],
-
   imports: {
     dirs: ['stores']
   },
-
   app: {
     baseURL: process.env.NUXT_API_BASE_URL,
     buildAssetsDir: '/static/'
   },
-
   vite: {
     plugins: [
       svgLoader({
@@ -43,5 +42,7 @@ export default defineNuxtConfig({
       pure: ['console.log', 'console.error', 'console.warn', 'console.debug', 'console.trace']
     }
   },
-  compatibilityDate: '2024-07-31'
+  ignore: [
+    process.env.NODE_ENV === 'production' ? 'pages/examples' : ''
+  ]
 })
