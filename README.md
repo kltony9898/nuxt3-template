@@ -98,6 +98,7 @@ yarn typelint // 檢查 typelint 規則
 - [pinia](https://pinia.vuejs.org/)
 - [VueUse](https://vueuse.org/)
 - [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader)
+- [Nuxt Icon](https://github.com/nuxt/icon)
 
 ### 規範
 - [ESLint Standard](https://standardjs.com/readme-zhtw.html)

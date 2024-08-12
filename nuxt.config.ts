@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import svgLoader from 'vite-svg-loader'
 
 export default defineNuxtConfig({
   runtimeConfig: {
@@ -22,7 +21,8 @@ export default defineNuxtConfig({
       ]
     }],
     '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxt/icon'
   ],
   imports: {
     dirs: ['stores']
@@ -32,16 +32,23 @@ export default defineNuxtConfig({
     buildAssetsDir: '/static/'
   },
   vite: {
-    plugins: [
-      svgLoader({
-        svgo: false
-      })
-    ],
     esbuild: {
       drop: ['debugger'],
       pure: ['console.log', 'console.error', 'console.warn', 'console.debug', 'console.trace']
     }
   },
+  compatibilityDate: '2024-08-02',
+  // - 重新更改Icon組建名稱
+  icon: {
+    componentName: 'NuxtIcon',
+    customCollections: [
+      {
+        prefix: 'icon',
+        dir: './assets/icons'
+      }
+    ]
+  },
+  // ignore page for development
   ignore: [
     process.env.NODE_ENV === 'production' ? 'pages/examples' : ''
   ]

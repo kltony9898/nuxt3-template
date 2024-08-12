@@ -33,7 +33,9 @@
     "husky": "8.0.3",
     "nuxt": "3.12.4",
     "typescript": "5.5.3",
-    "vite-svg-loader": "5.1.0",
     "vue-tsc": "2.0.26"
+  },
+  "dependencies": {
+    "@nuxt/icon": "^1.4.4"
   }
 }
