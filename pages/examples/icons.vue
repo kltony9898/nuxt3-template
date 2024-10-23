@@ -1,13 +1,15 @@
 <script setup lang="ts">
 const icons = await import.meta.glob('@/assets/icons/**/*.svg') as Record<string, () => Promise<Component>>
 const iconList = Object.keys(icons).map(key => key.split('/assets/icons/')[1].split('.svg')[0])
+
 const searchText = ref('')
-const copyMode:Ref<'icon-text' | 'xml'> = ref('icon-text')
 const selectedIconName = ref('')
+
+const copyMode:Ref<'icon-text' | 'xml'> = ref('icon-text')
 
 const { copy, text } = useClipboard()
 
-const filterIconList = computed(() => {
+const filteredIconList = computed(() => {
   // ignore case search by search text
   const regex = new RegExp(searchText.value, 'i')
   return iconList.filter(item => regex.test(item))
@@ -16,7 +18,10 @@ const filterIconList = computed(() => {
 const activeIcon = ref()
 
 const iconName = computed(() => (fileName:string) => {
-  return `icon:${fileName}`
+  const name = fileName.split('/')[1] || fileName.split('/')[0]
+  const path = fileName.split('/')[1] ? fileName.split('/')[0] : ''
+
+  return path ? `${path}:${name}` : `icon:${name}`
 })
 
 const copyedIcon = computed(() => {
@@ -30,10 +35,11 @@ const copyedIcon = computed(() => {
 })
 
 const copyIcon = (icon:string) => {
-  const prefix = 'icon:'
-  selectedIconName.value = prefix + icon
+  selectedIconName.value = icon
   const iconXml = `<NuxtIcon :name="${selectedIconName.value}" />`
-  if (copyMode.value === 'icon-text') { return copy(selectedIconName.value) }
+  if (copyMode.value === 'icon-text') {
+    return copy(selectedIconName.value)
+  }
   return copy(iconXml)
 }
 
@@ -78,10 +84,10 @@ const copyIcon = (icon:string) => {
     </div>
     <div class="mt-20 grid grid-cols-5 justify-center gap-3 px-[20%]">
       <div
-        v-for="(icon,index) in filterIconList"
+        v-for="(icon,index) in filteredIconList"
         :key="index"
         class="flex min-w-[108px] cursor-pointer flex-col items-center justify-center rounded-lg p-4 shadow-lg transition-all duration-300 ease-in-out hover:bg-slate-100"
-        @click="copyIcon(icon)"
+        @click="copyIcon(iconName(icon))"
       >
         <NuxtIcon
           :name="iconName(icon)"

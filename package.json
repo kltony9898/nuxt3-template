@@ -2,6 +2,7 @@
   "name": "nuxt3-template",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "build:gh-pages": "nuxt build --dotenv .env.gh-pages",
@@ -14,7 +15,8 @@
     "postinstall": "nuxt prepare",
     "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"yarn eslint && yarn typelint\" && husky set .husky/pre-push \"yarn eslint && yarn typelint\"",
     "eslint": "eslint --ext .ts,.js,.vue .",
-    "typelint": "nuxi typecheck"
+    "typelint": "nuxi typecheck",
+    "customize": "node customize"
   },
   "devDependencies": {
     "@commitlint/cli": "18.2.0",
@@ -33,9 +35,8 @@
     "husky": "8.0.3",
     "nuxt": "3.12.4",
     "typescript": "5.5.3",
-    "vue-tsc": "2.0.26"
-  },
-  "dependencies": {
-    "@nuxt/icon": "^1.4.4"
+    "vue-tsc": "2.0.26",
+    "@inquirer/prompts": "7.0.0",
+    "@nuxt/icon": "1.4.4"
   }
 }

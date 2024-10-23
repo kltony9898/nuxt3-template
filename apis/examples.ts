@@ -12,7 +12,7 @@ type Response = {
   }
 }
 
-const readExample = (id: string, type: 'default') => useHttp().get('/example/:id', {
+const readExample = (id: string, type: 'default') => useHttp().get('/examples/:id', {
   params: {
     id
   },
@@ -21,21 +21,21 @@ const readExample = (id: string, type: 'default') => useHttp().get('/example/:id
   }
 }) as Promise<Response>
 
-const createExample = (id: string, data: Example) => useHttp().post('/example/:id', {
+const createExample = (id: string, data: Example) => useHttp().post('/examples/:id', {
   params: {
     id
   },
   body: data
 }) as Promise<Response>
 
-const updateExample = (id: string, data: Partial<Example>) => useHttp().put('/example/:id', {
+const updateExample = (id: string, data: Partial<Example>) => useHttp().put('/examples/:id', {
   params: {
     id
   },
   body: data
 }) as Promise<Response>
 
-const deleteExample = (id: string) => useHttp().delete('/example/:id', {
+const deleteExample = (id: string) => useHttp().delete('/examples/:id', {
   params: {
     id
   }

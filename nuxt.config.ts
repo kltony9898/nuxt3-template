@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     dirs: ['stores']
   },
   app: {
-    baseURL: process.env.NUXT_API_BASE_URL,
+    baseURL: process.env.NUXT_APP_BASE_URL,
     buildAssetsDir: '/static/'
   },
   vite: {
@@ -45,11 +45,18 @@ export default defineNuxtConfig({
       {
         prefix: 'icon',
         dir: './assets/icons'
+      },
+      {
+        prefix: 'examples',
+        dir: './assets/icons/examples'
       }
     ]
   },
   // ignore page for development
   ignore: [
-    process.env.NODE_ENV === 'production' ? 'pages/examples' : ''
+    process.env.NODE_ENV === 'production' ? 'pages/examples' : '',
+    process.env.NODE_ENV === 'production' ? 'apis/examples' : '',
+    process.env.NODE_ENV === 'production' ? 'assets/icons/examples' : '',
+    process.env.NODE_ENV === 'production' ? 'server/api/examples' : ''
   ]
 })
