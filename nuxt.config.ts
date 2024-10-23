@@ -55,6 +55,7 @@ export default defineNuxtConfig({
   // ignore page for development
   ignore: [
     process.env.NODE_ENV === 'production' ? 'pages/examples' : '',
+    process.env.NODE_ENV === 'production' ? 'types/examples' : '',
     process.env.NODE_ENV === 'production' ? 'apis/examples' : '',
     process.env.NODE_ENV === 'production' ? 'assets/icons/examples' : '',
     process.env.NODE_ENV === 'production' ? 'server/api/examples' : ''
