@@ -22,7 +22,8 @@ export default defineNuxtConfig({
     }],
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@vee-validate/nuxt'
   ],
   imports: {
     dirs: ['stores']
@@ -47,6 +48,10 @@ export default defineNuxtConfig({
         dir: './assets/icons'
       },
       {
+        prefix: 'form',
+        dir: './assets/icons/form'
+      },
+      {
         prefix: 'examples',
         dir: './assets/icons/examples'
       }
@@ -54,10 +59,19 @@ export default defineNuxtConfig({
   },
   // ignore page for development
   ignore: [
-    process.env.NODE_ENV === 'production' ? 'pages/examples' : '',
-    process.env.NODE_ENV === 'production' ? 'types/examples' : '',
-    process.env.NODE_ENV === 'production' ? 'apis/examples' : '',
-    process.env.NODE_ENV === 'production' ? 'assets/icons/examples' : '',
-    process.env.NODE_ENV === 'production' ? 'server/api/examples' : ''
+    // 只在生產環境中忽略以下頁面和組件
+    ...(process.env.NODE_ENV === 'production'
+      ? [
+          'pages/examples',
+          'components/examples',
+          'composables/examples',
+          'utils/examples',
+          'stores/examples',
+          'types/examples',
+          'apis/examples',
+          'assets/icons/examples',
+          'server/api/examples'
+        ]
+      : [])
   ]
 })
