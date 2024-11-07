@@ -66,7 +66,7 @@ await replaceLineInFile(packageFile, [
 
 const envGHPageFile = path.join(__dirname, '.env.gh-pages')
 await replaceLineInFile(envGHPageFile, [
-  ['NUXT_APP_BASE_URL=', `NUXT_APP_BASE_URL= '${projectName}'`]
+  ['NUXT_APP_BASE_URL=', `NUXT_APP_BASE_URL= '/${projectName}/'`]
 ])
 
 console.log('專案客製化完成')

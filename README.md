@@ -25,6 +25,7 @@
 ### 啟動指令
 ```
 yarn install // 安裝套件
+yarn customize // 客製化專案設定
 yarn dev // 啟動專案
 yarn dev:gh-pages // 啟動專案（GitHub Pages 模式）
 yarn build // 使用 CSR 或 SSR 模式打包專案
@@ -56,15 +57,21 @@ yarn typelint // 檢查 typelint 規則
 
 ### 開發步驟
 - 建立 `feature/#1-basic` 分支
-  - package.json
-    - name : `${GitHub 專案名稱}`
-  - .env.gh-pages
-    - NUXT_APP_BASE_URL : `${GitHub 專案名稱}`
-  - README.md
-    - 填寫專案名稱及專案資訊
+  - 執行 `yarn customize` 進行專案客製化設定或手動執行以下步驟
+    - package.json
+      - name : `${GitHub 專案名稱}`
+    - .env.gh-pages
+      - NUXT_APP_BASE_URL : `${GitHub 專案名稱}`
+    - README.md
+      - 填寫專案名稱及專案資訊
+    - Slack 綁定
+      - 在 `#team-front-end-develop` 群組中輸入 `/github subscribe ${owner}/${repo}` 即可將進行綁定，未來群組成員可以收到 `issues`, `pulls`, `commits`, `releases`, `deployments` 相關的訊息。
+      - 若專案結束，輸入 `/github unsubscribe ${owner}/${repo}` 即可解除綁定。
+      - 若要綁定其他 Slack 群組，需要在該群組選項 `Integrations/Apps` 中新增 `Github`，並重複以上操作即可。
 - 建立 `feature/#2-design` 分支（設計稿完成）
   - assets/icons
     - 下載設計稿圖示包
+    - [Nuxt Icon 參考文件](https://hackmd.io/Swod3KqJTgass8l9-eJ2FQ?view)
   - tailwind.config.ts
     - 設定設計稿變數
   - components
@@ -80,11 +87,6 @@ yarn typelint // 檢查 typelint 規則
   - apis（待討論）
     - 根據後端文件建立 API 型別
     - 根據後端文件進行串接及業務邏輯封裝
-
-### Slack 綁定
-- 在 `#team-front-end-develop` 群組中輸入 `/github subscribe ${owner}/${repo}` 即可將進行綁定，未來群組成員可以收到 `issues`, `pulls`, `commits`, `releases`, `deployments` 相關的訊息。
-- 若專案結束，輸入 `/github unsubscribe ${owner}/${repo}` 即可解除綁定。
-- 若要綁定其他 Slack 群組，需要在該群組選項 `Integrations/Apps` 中新增 `Github`，並重複以上操作即可。
 
 ## 開發規範
 
