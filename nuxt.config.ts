@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-
+import { getI18nSetting } from './languages/i18nConfig'
 export default defineNuxtConfig({
   runtimeConfig: {
     public: {
@@ -13,18 +13,13 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true
   },
-  modules: [
-    ['@pinia/nuxt', {
-      autoImports: [
-        'defineStore',
-        ['defineStore', 'definePiniaStore']
-      ]
-    }],
-    '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt',
-    '@nuxt/icon',
-    '@vee-validate/nuxt'
-  ],
+  modules: [['@pinia/nuxt', {
+    autoImports: [
+      'defineStore',
+      ['defineStore', 'definePiniaStore']
+    ]
+  }], '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxt/icon', '@vee-validate/nuxt', '@nuxtjs/i18n'],
+  i18n: getI18nSetting(),
   imports: {
     dirs: ['stores']
   },
