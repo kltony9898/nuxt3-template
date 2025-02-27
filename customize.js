@@ -122,7 +122,7 @@ await replaceLineInFile(READMEFile, [
   ['# **', `# **${projectName}**`],
   ['- 流程圖：', `- 流程圖： [${flowUrl}](${flowUrl})`],
   ['- 設計稿：', `- 設計稿： [${designUrl}](${designUrl})`],
-  ['- 後端文件：', `- 後端文件： [${apiUrl}](${apiUrl})`],
+  ['- 後端文件：', `- 後端文件： [${apiUrl}](${apiUrl})`]
 ])
 
 const packageFile = path.join(__dirname, 'package.json')
@@ -144,5 +144,3 @@ await replaceLineInFile(envFile, [
     'NUXT_PRIVATE_GOOGLE_SHEET_KEY=', `NUXT_PRIVATE_GOOGLE_SHEET_KEY= '${spreadsheetKey}'`
   ]
 ])
-console.log('專案客製化完成')
-
