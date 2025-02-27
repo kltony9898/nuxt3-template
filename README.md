@@ -68,6 +68,16 @@ yarn typelint // 檢查 typelint 規則
       - 在 `#team-front-end-develop` 群組中輸入 `/github subscribe ${owner}/${repo}` 即可將進行綁定，未來群組成員可以收到 `issues`, `pulls`, `commits`, `releases`, `deployments` 相關的訊息。
       - 若專案結束，輸入 `/github unsubscribe ${owner}/${repo}` 即可解除綁定。
       - 若要綁定其他 Slack 群組，需要在該群組選項 `Integrations/Apps` 中新增 `Github`，並重複以上操作即可。
+  - Azure Blob Website 自動部署功能（可選）
+    - 執行 `yarn customize:blob` 進行自動部署設定
+    - Azure Storage Account 設定
+      - 請先自行在指定 resource group 底下開設 storage account，並且設置 static website active
+      - 確認 resource group 位置後，需要向 resource group 權限管理者去索取一個 JSON 檔來進行 RBAC
+      ([reference](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel#generate-deployment-credentials))
+    - GitHub Repo 設定
+      - 移動至 `Settings > Security > Secrets and variables > Actions > Repository secrets` 將上述 JSON 檔貼上，並取變數名為 `AZURE_CREDENTIALS` (Beta 為 `AZURE_CREDENTIALS_BETA`)
+      - 移動至 `Settings > Security > Secrets and variables > Actions > Repository variables` 將 Azure storage account name 貼上，並取變數名為 `ACCOUNT_NAME`（Beta 為 `ACCOUNT_NAME_BETA`）
+    
 - 建立 `feature/#2-design` 分支（設計稿完成）
   - assets/icons
     - 下載設計稿圖示包
@@ -160,11 +170,16 @@ yarn typelint // 檢查 typelint 規則
 
 ### Releases
 - Choose a tag
-  - 版本號 : `v${主版號}.${次版號}.${修訂號}`
+  - 版本號 : `v${主版號}.${次版號}.${修訂號}-${測試環境}.${測試版號}`
     - 主版號 : 不可相容的功能新增或修改
     - 次版號 : 可相容的功能新增或修改
     - 修訂號 : 可相容的功能問題修復
+    - 測試環境（選填）: alpha (內部)、beta (外部)
+    - 測試版號（選填）: 內部或外部測版號
 - Target
   - 選擇 `master` 或 `release`
 - 填寫標題及改動說明
   - 可點擊 `Generate release notes` 自動產生
+
+
+

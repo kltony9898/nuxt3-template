@@ -5,8 +5,8 @@ import { fileURLToPath } from 'url'
 import { exec } from 'child_process'
 import { input, confirm } from '@inquirer/prompts'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const parentDir = path.dirname(__dirname)
 
 const projectName = await input({
   message: '請輸入專案名稱（GitHub）：'
@@ -134,7 +134,7 @@ await replaceLineInFile(READMEFile, [
   ['- Asana：', `- Asana： [${asanaUrl}](${asanaUrl})`]
 ])
 
-const packageFile = path.join(__dirname, 'package.json')
+const packageFile = path.join(parentDir, 'package.json')
 await replaceLineInFile(packageFile, [
   ['"name":', `  "name": "${projectName}",`]
 ])
@@ -159,14 +159,12 @@ const copySlackCommand = () => {
   const slackCommand = `/github subscribe OsenseTech/${projectName}`
   const copyCommand = os.platform() === 'win32' ? 'clip' : 'pbcopy'
 
-  console.log(`已成功將指令（${slackCommand}）複製至剪貼簿`)
-  console.log('請將指令貼上至 Slack 頻道（https://osenseworkspace.slack.com/archives/C04SVJVHXHV）')
-
   exec(`echo ${slackCommand} | ${copyCommand}`, (error) => {
     if (error) {
       console.error(error)
     } else {
-      console.log('指令已成功複製到剪貼簿！')
+      console.log(`已成功將指令（${slackCommand}）複製至剪貼簿`)
+      console.log('請將指令貼上至 Slack 頻道（https://osenseworkspace.slack.com/archives/C04SVJVHXHV）')
     }
   })
 }
