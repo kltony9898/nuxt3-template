@@ -1,6 +1,5 @@
 import { promises as fs } from 'fs'
 import path from 'path'
-import os from 'os'
 import { fileURLToPath } from 'url'
 import { exec } from 'child_process'
 import { input, confirm } from '@inquirer/prompts'
