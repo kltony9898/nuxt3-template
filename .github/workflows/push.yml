@@ -39,8 +39,3 @@ jobs:
       run: |
         yarn eslint
     
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@releases/v4
-      with:
-        BRANCH: gh-pages
-        FOLDER: dist
