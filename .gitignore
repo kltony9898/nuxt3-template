@@ -1,0 +1,13 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+dist
+
+# husky
+.husky
+.DS_Store
+
+

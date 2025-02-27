@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "bradlc.vscode-tailwindcss",
+    "hollowtree.vue-snippets",
+    "dbaeumer.vscode-eslint",
+    "antfu.goto-alias"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "index": {
+    "hello": "Hello",
+    "cancel": "cancel",
+    "email": "email",
+    "date": "date",
+    "label": {
+      "sex": "sex"
+    }
+  },
+  "about": {
+    "about": "about",
+    "message": "message"
+  }
+}

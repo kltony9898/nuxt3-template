@@ -1,0 +1,15 @@
+{
+  "index": {
+    "hello": "你好",
+    "cancel": "取消",
+    "email": "信箱",
+    "date": "日期",
+    "label": {
+      "sex": "性別"
+    }
+  },
+  "about": {
+    "about": "關於",
+    "message": "訊息"
+  }
+}
