@@ -16,8 +16,7 @@
     "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"yarn eslint && yarn typelint\" && husky set .husky/pre-push \"yarn eslint && yarn typelint\"",
     "eslint": "eslint --ext .ts,.js,.vue .",
     "typelint": "nuxi typecheck",
-    "customize": "node customize",
-    "customize:blob": "node customize/blob"
+    "customize": "node customize"
   },
   "devDependencies": {
     "@commitlint/cli": "18.2.0",
@@ -27,7 +26,7 @@
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@pinia/nuxt": "0.10.1",
-    "@nuxtjs/i18n": "^8.5.5",
+    "@nuxtjs/i18n": "8.5.5",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@vee-validate/i18n": "4.15.0",
