@@ -11,7 +11,7 @@ export const useCustomizeBlob = async () => {
     message: '是否使用 Azure Blob 部署流程？'
   })
 
-  let typeList
+  let typeList = []
 
   if (isBlobUsed) {
     typeList = await checkbox({
