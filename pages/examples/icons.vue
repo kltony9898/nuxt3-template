@@ -36,7 +36,7 @@ const copyedIcon = computed(() => {
 
 const copyIcon = (icon:string) => {
   selectedIconName.value = icon
-  const iconXml = `<NuxtIcon :name="${selectedIconName.value}" />`
+  const iconXml = `<NuxtIcon name="${selectedIconName.value}" />`
   if (copyMode.value === 'icon-text') {
     return copy(selectedIconName.value)
   }
