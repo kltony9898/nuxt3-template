@@ -21,6 +21,7 @@
 - [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Goto definition alias](https://marketplace.visualstudio.com/items?itemName=antfu.goto-alias)
+- [i18n Ally](https://marketplace.cursorapi.com/items/?itemName=lokalise.i18n-ally)
 
 ### 啟動指令
 ```
