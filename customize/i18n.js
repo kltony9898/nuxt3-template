@@ -17,13 +17,28 @@ export const useCustomizeI18n = async () => {
   })
 
   // 移除 package json 內 i18n 用指令
-  const removePackageJsonI18nCommand = () => {
+  const removePackageJsonI18nCommand = async () => {
   // 讀取 package.json
     const json = JSON.parse(packageJsonFile)
-    // 刪除 i-18n
+    // 刪除 i18n 相關腳本
+    delete json.scripts['i-18n']
     delete json.scripts.locale
+    // 從 build 和 generate 腳本中移除 i18n 部分
+    if (json.scripts.build) {
+      json.scripts.build = json.scripts.build.replace(' && i-18n', '')
+    }
+    if (json.scripts.generate) {
+      json.scripts.generate = json.scripts.generate.replace(' && i-18n', '')
+    }
+
+    // 移除 devDependencies 中的相關套件
+    if (json.devDependencies) {
+      delete json.devDependencies['@nuxtjs/i18n']
+      delete json.devDependencies.flat
+      delete json.devDependencies['spreadsheet-to-json']
+    }
     // 將更新後的 JSON 寫回 package.json
-    fs.writeFile('package.json', JSON.stringify(json, null, 2))
+    await fs.writeFile('package.json', JSON.stringify(json, null, 2))
   }
 
   // 刪除 i18n 用資料夾
@@ -34,6 +49,37 @@ export const useCustomizeI18n = async () => {
         ['- [nuxtjs/i18n]', '']
       ])
       console.log('資料夾 ./languages 已成功刪除')
+
+      // 移除 .env 檔案中的 GOOGLE_SHEET_KEY 設定
+      const envFile = path.join(parentDir, '.env')
+      await replaceLineInFile(envFile, [
+        ["NUXT_PRIVATE_GOOGLE_SHEET_KEY=''", '']
+      ])
+      console.log('已移除 .env 檔案中的 GOOGLE_SHEET_KEY 設定')
+
+      // 新增：刪除 language.vue 檔案
+      const languageVueFile = path.join(parentDir, 'pages/examples/language.vue')
+      try {
+        await fs.unlink(languageVueFile)
+        console.log('已刪除 pages/examples/language.vue 檔案')
+      } catch (error) {
+        if (error.code !== 'ENOENT') {
+          console.error('刪除 language.vue 檔案時發生錯誤:', error)
+        }
+      }
+      // 新增：移除 settings.json 中的 i18n-ally 設定
+      const settingsFile = path.join(parentDir, '.vscode/settings.json')
+      try {
+        const settingsContent = await fs.readFile(settingsFile, 'utf8')
+        const settingsJson = JSON.parse(settingsContent)
+        delete settingsJson['i18n-ally.localesPaths']
+        await fs.writeFile(settingsFile, JSON.stringify(settingsJson, null, 2))
+        console.log('已移除 settings.json 中的 i18n-ally 設定')
+      } catch (error) {
+        if (error.code !== 'ENOENT') {
+          console.error('更新 settings.json 時發生錯誤:', error)
+        }
+      }
     } catch (error) {
       console.error('刪除資料夾時發生錯誤:', error)
     }
