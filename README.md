@@ -1,13 +1,4 @@
-# **（專案名稱）**
-
-## 專案資訊
-
-### 資源
-- 流程圖： （流程圖連結）
-- 設計稿： （設計稿連結）
-- 後端文件： （後端文件連結）
-- Slack： （Slack 連結）
-- Asana： （Asana 連結）
+# **（模板名稱）**
 
 ### 環境
 - node 版本 : `20.13.1`
@@ -55,49 +46,6 @@ yarn typelint // 檢查 typelint 規則
 - Pages
   - Build and deployment
     - Branch : `gh-pages`
-
-### 開發步驟
-- 建立 `feature/#1-basic` 分支
-  - 執行 `yarn customize` 進行專案客製化設定或手動執行以下步驟
-    - package.json
-      - name : `${GitHub 專案名稱}`
-    - .env.gh-pages
-      - NUXT_APP_BASE_URL : `${GitHub 專案名稱}`
-    - README.md
-      - 填寫專案名稱及專案資訊
-    - Slack 綁定
-      - 在 `#team-front-end-develop` 群組中輸入 `/github subscribe ${owner}/${repo}` 即可將進行綁定，未來群組成員可以收到 `issues`, `pulls`, `commits`, `releases`, `deployments` 相關的訊息。
-      - 若專案結束，輸入 `/github unsubscribe ${owner}/${repo}` 即可解除綁定。
-      - 若要綁定其他 Slack 群組，需要在該群組選項 `Integrations/Apps` 中新增 `Github`，並重複以上操作即可。
-  - Azure Blob Website 自動部署功能（可選）
-    - 執行 `yarn customize:blob` 進行自動部署設定
-    - Azure Storage Account 設定
-      - 請先自行在指定 resource group 底下開設 storage account，並且設置 static website active
-      - 確認 resource group 位置後，需要向 resource group 權限管理者去索取一個 JSON 檔來進行 RBAC
-      ([reference](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions?tabs=userlevel#generate-deployment-credentials))
-    - GitHub Repo 設定
-      - 移動至 `Settings > Security > Secrets and variables > Actions > Repository secrets` 將上述 JSON 檔貼上，並取變數名為 `AZURE_CREDENTIALS` (Beta 為 `AZURE_CREDENTIALS_BETA`)
-      - 移動至 `Settings > Security > Secrets and variables > Actions > Repository variables` 將 Azure storage account name 貼上，並取變數名為 `ACCOUNT_NAME`（Beta 為 `ACCOUNT_NAME_BETA`）
-    
-- 建立 `feature/#2-design` 分支（設計稿完成）
-  - assets/icons
-    - 下載設計稿圖示包
-    - [Nuxt Icon 參考文件](https://hackmd.io/Swod3KqJTgass8l9-eJ2FQ?view)
-  - tailwind.config.ts
-    - 設定設計稿變數
-  - components
-    - 根據設計稿拆分共用組件
-    - 建立 `components` 檔案並備註組件內容
-  - layouts
-    - 根據設計稿圖規劃專案佈局
-    - 建立 `layouts` 檔案並備註佈局內容
-  - pages
-    - 根據設計稿圖規劃頁面流程
-    - 建立 `pages` 檔案並備註頁面內容
-- 建立 `feature/#3-api` 分支（後端文件完成）
-  - apis（待討論）
-    - 根據後端文件建立 API 型別
-    - 根據後端文件進行串接及業務邏輯封裝
 
 ## 開發規範
 
@@ -154,20 +102,6 @@ yarn typelint // 檢查 typelint 規則
   - Master 分支為主分支 : `git merge master --no-ff` 
   - 特定 Release 分支為主分支 : `git merge release/${主版號}.${次版號} --no-ff` 
 - 通過 `commitlint` 檢查
-
-### Pull Requests
-- Author
-  - 標題、功能說明和標籤類型填寫正確且清楚
-  - 通過 CI 檢查
-  - 填寫測試清單
-  - 指派至少一名 Code Review 負責人
-- Reviewer
-  - 確認標題、功能說明和標籤類型填寫符合對應 Issue
-  - 確認目標合併分支正確
-  - 進行 Code Review 確認是否符合開發規範
-  - 確認通過測試清單
-  - 使用 `Squash and Merge` 模式合併
-  - 確認通過 CI/CD 且成功合併及部署
 
 ### Releases
 - Choose a tag
