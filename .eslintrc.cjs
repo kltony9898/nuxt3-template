@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true
   },
   parser: 'vue-eslint-parser',
   extends: [
@@ -9,7 +10,9 @@ module.exports = {
     'plugin:nuxt/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
-    'plugin:tailwindcss/recommended'
+    'plugin:tailwindcss/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -17,6 +20,17 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['@typescript-eslint', 'tailwindcss'],
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json'
+      },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
+      }
+    }
+  },
   rules: {
     'no-console': 'off',
     'vue/multi-word-component-names': 'off',
