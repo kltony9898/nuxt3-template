@@ -1,8 +1,8 @@
 # **（模板名稱）**
 
 ### 環境
-- node 版本 : `20.13.1`
-- yarn 版本 : `1.22.19`
+- node 版本 : `20.19.0`
+- npm 版本 : `10.5.2` (或更高版本)
 - 編輯器 : `VSCode`
 
 ### VSCode 套件
@@ -16,13 +16,13 @@
 
 ### 啟動指令
 ```
-yarn install // 安裝套件
-yarn customize // 客製化專案設定
-yarn dev // 啟動專案
-yarn dev:gh-pages // 啟動專案（GitHub Pages 模式）
-yarn build // 使用 CSR 或 SSR 模式打包專案
-yarn build:gh-pages // 使用 CSR 或 SSR 模式打包專案（GitHub Pages 模式）
-yarn generate // 使用 SSG 模式打包專案
+npm install // 安裝套件
+npm run customize // 客製化專案設定
+npm run dev // 啟動專案
+npm run dev:gh-pages // 啟動專案（GitHub Pages 模式）
+npm run build // 使用 CSR 或 SSR 模式打包專案
+npm run build:gh-pages // 使用 CSR 或 SSR 模式打包專案（GitHub Pages 模式）
+npm run generate // 使用 SSG 模式打包專案
 yarn generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
 yarn preview // 啟動打包後專案
 yarn preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）

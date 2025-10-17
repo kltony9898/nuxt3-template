@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.13.1]
+        node-version: [20.19.0]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -26,21 +26,19 @@ jobs:
         
     - name: Install
       run: |
-        npm install -g yarn
-        yarn
-        yarn install
+        npm install
         
     - name: Build
       run: |
         rm -rf node_modules/.cache
-        yarn generate:gh-pages
+        npm run generate:gh-pages
       
     - name: Test
       run: |
-        yarn eslint
+        npm run eslint
     
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v4
       with:
-        BRANCH: gh-pages
-        FOLDER: dist
+        branch: gh-pages
+        folder: dist

@@ -13,7 +13,7 @@
     "preview": "nuxt preview",
     "preview:gh-pages": "nuxt preview --dotenv .env.gh-pages",
     "postinstall": "nuxt prepare",
-    "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"yarn eslint && yarn typelint\" && husky set .husky/pre-push \"yarn eslint && yarn typelint\"",
+    "prepare": "husky install && husky set .husky/commit-msg \"npx --no -- commitlint --edit $1\" && husky set .husky/pre-merge-commit \"npm run eslint && npm run typelint\" && husky set .husky/pre-push \"npm run eslint && npm run typelint\"",
     "eslint": "eslint --ext .ts,.js,.vue .",
     "typelint": "nuxi typecheck",
     "customize": "node customize"
@@ -35,7 +35,7 @@
     "@vee-validate/zod": "4.15.0",
     "@vueuse/core": "12.5.0",
     "@vueuse/nuxt": "12.5.0",
-    "eslint": "8.53.0",
+    "eslint": "8.56.0",
     "eslint-plugin-nuxt": "4.0.0",
     "eslint-plugin-tailwindcss": "3.18.0",
     "eslint-plugin-vue": "9.32.0",
