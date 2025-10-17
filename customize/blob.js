@@ -29,6 +29,10 @@ export const useCustomizeBlob = async () => {
     })
   }
 
-  !typeList.includes('production') && fs.rm(path.join(parentDir, '.github/workflows/blob_storage_website.yml'), { force: true })
-  !typeList.includes('beta') && fs.rm(path.join(parentDir, '.github/workflows/blob_storage_website_beta.yml'), { force: true })
+  if (!typeList.includes('production')) {
+    fs.rm(path.join(parentDir, '.github/workflows/blob_storage_website.yml'), { force: true })
+  }
+  if (!typeList.includes('beta')) {
+    fs.rm(path.join(parentDir, '.github/workflows/blob_storage_website_beta.yml'), { force: true })
+  }
 }
