@@ -11,7 +11,7 @@
 
 ### 環境
 - node 版本 : `20.13.1`
-- yarn 版本 : `1.22.19`
+- npm 版本 : `10.5.2`
 - 編輯器 : `VSCode`
 
 ### VSCode 套件
@@ -25,18 +25,18 @@
 
 ### 啟動指令
 ```
-yarn install // 安裝套件
-yarn customize // 客製化專案設定
-yarn dev // 啟動專案
-yarn dev:gh-pages // 啟動專案（GitHub Pages 模式）
-yarn build // 使用 CSR 或 SSR 模式打包專案
-yarn build:gh-pages // 使用 CSR 或 SSR 模式打包專案（GitHub Pages 模式）
-yarn generate // 使用 SSG 模式打包專案
-yarn generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
-yarn preview // 啟動打包後專案
-yarn preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）
-yarn eslint // 檢查 eslint 規則
-yarn typelint // 檢查 typelint 規則
+npm install // 安裝套件
+npm run customize // 客製化專案設定
+npm run dev // 啟動專案
+npm run dev:gh-pages // 啟動專案（GitHub Pages 模式）
+npm run build // 使用 CSR 或 SSR 模式打包專案
+npm run build:gh-pages // 使用 CSR 或 SSR 模式打包專案（GitHub Pages 模式）
+npm run generate // 使用 SSG 模式打包專案
+npm run generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
+npm run preview // 啟動打包後專案
+npm run preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）
+npm run eslint // 檢查 eslint 規則
+npm run typelint // 檢查 typelint 規則
 ```
 
 ## 專案建立步驟
@@ -58,7 +58,7 @@ yarn typelint // 檢查 typelint 規則
 
 ### 開發步驟
 - 建立 `feature/#1-basic` 分支
-  - 執行 `yarn customize` 進行專案客製化設定或手動執行以下步驟
+  - 執行 `npm run customize` 進行專案客製化設定或手動執行以下步驟
     - package.json
       - name : `${GitHub 專案名稱}`
     - .env.gh-pages
@@ -70,7 +70,7 @@ yarn typelint // 檢查 typelint 規則
       - 若專案結束，輸入 `/github unsubscribe ${owner}/${repo}` 即可解除綁定。
       - 若要綁定其他 Slack 群組，需要在該群組選項 `Integrations/Apps` 中新增 `Github`，並重複以上操作即可。
   - Azure Blob Website 自動部署功能（可選）
-    - 執行 `yarn customize:blob` 進行自動部署設定
+    - 執行 `npm run customize:blob` 進行自動部署設定
     - Azure Storage Account 設定
       - 請先自行在指定 resource group 底下開設 storage account，並且設置 static website active
       - 確認 resource group 位置後，需要向 resource group 權限管理者去索取一個 JSON 檔來進行 RBAC

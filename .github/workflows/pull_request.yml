@@ -26,16 +26,14 @@ jobs:
         
     - name: Install
       run: |
-        npm install -g yarn
-        yarn
-        yarn install
+        npm install
         
     - name: Build
       run: |
         rm -rf node_modules/.cache
-        yarn generate:gh-pages
+        npm run generate:gh-pages
       
     - name: Test
       run: |
-        yarn eslint
+        npm run eslint
     
