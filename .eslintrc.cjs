@@ -17,6 +17,14 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['@typescript-eslint', 'tailwindcss'],
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: './tsconfig.json'
+      }
+    }
+  },
   rules: {
     'no-console': 'off',
     'vue/multi-word-component-names': 'off',
