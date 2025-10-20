@@ -1,7 +1,7 @@
-# **（模板名稱）**
+# **Nuxt3 Template**
 
 ### 環境
-- node 版本 : `20.19.0`
+- Node.js 版本 : `20.13.1` (或更高版本)
 - npm 版本 : `10.5.2` (或更高版本)
 - 編輯器 : `VSCode`
 
@@ -15,7 +15,7 @@
 - [i18n Ally](https://marketplace.cursorapi.com/items/?itemName=lokalise.i18n-ally)
 
 ### 啟動指令
-```
+```bash
 npm install // 安裝套件
 npm run customize // 客製化專案設定
 npm run dev // 啟動專案
@@ -23,11 +23,12 @@ npm run dev:gh-pages // 啟動專案（GitHub Pages 模式）
 npm run build // 使用 CSR 或 SSR 模式打包專案
 npm run build:gh-pages // 使用 CSR 或 SSR 模式打包專案（GitHub Pages 模式）
 npm run generate // 使用 SSG 模式打包專案
-yarn generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
-yarn preview // 啟動打包後專案
-yarn preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）
-yarn eslint // 檢查 eslint 規則
-yarn typelint // 檢查 typelint 規則
+npm run generate:gh-pages // 使用 SSG 模式打包專案（GitHub Pages 模式）
+npm run preview // 啟動打包後專案
+npm run preview:gh-pages // 啟動打包後專案（GitHub Pages 模式）
+npm run eslint // 檢查 ESLint 規則
+npm run eslint:fix // 修正 ESLint 錯誤
+npm run typelint // 檢查 TypeScript 類型規則
 ```
 
 ## 專案建立步驟
